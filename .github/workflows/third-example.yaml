@@ -1,7 +1,7 @@
 name: third workflow
 on: push
 jobs:
-  second_job:
+  first_job:
     runs-on: ubuntu-latest
     steps:
     - name: checkout the code
@@ -13,3 +13,12 @@ jobs:
        ./shell-script.sh
     - name: view dragon file
       run: cat dragon.txt
+
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: list all cowsay animals
+      run: cowsay -l
+
+    - name: make a cow
+      run: cowsay -d "Server is down"
