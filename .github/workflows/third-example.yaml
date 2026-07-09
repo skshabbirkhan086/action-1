@@ -15,6 +15,7 @@ jobs:
       run: cat dragon.txt
 
   second_job:
+    needs: first_job
     runs-on: ubuntu-latest
     steps:
     - name: list all cowsay animals
