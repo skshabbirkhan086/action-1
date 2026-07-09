@@ -1,0 +1,15 @@
+name: third workflow
+on: push
+jobs:
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout the code
+      uses: actions/checkout@v6
+
+    - name: running shell script
+      run: |
+       chmod +x shell-script.sh
+       ./shell-script.sh
+    - name: view dragon file
+      run: cat dragon.txt
