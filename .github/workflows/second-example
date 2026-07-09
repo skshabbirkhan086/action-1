@@ -1,0 +1,23 @@
+name: second workflow
+on: push
+jobs:
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout the code
+      uses: actions/checkout@v6
+
+    - name: running multiple commands
+      run: |
+       echo "hello how are you"
+       ls -ltr
+       cat README.md
+       whoami
+       uname
+       id
+    
+    - name: ASSII
+      run: cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> dragon.txt
+
+    - name: validate dragon.txt
+      run: cat dragon.txt
