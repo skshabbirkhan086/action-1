@@ -1,0 +1,35 @@
+name: Manual Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select environment"
+        required: true
+        type: choice
+        options:
+          - dev
+          - qa
+          - prod
+
+      image_tag:
+        description: "Docker image tag"
+        required: true
+        type: string
+
+      run_tests:
+        description: "Run tests before deployment?"
+        required: true
+        type: boolean
+        default: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print selected inputs
+        run: |
+          echo "Environment is ${{ inputs.environment }}"
+          echo "Image tag is ${{ inputs.image_tag }}"
+          echo "Run tests? ${{ inputs.run_tests }}"
