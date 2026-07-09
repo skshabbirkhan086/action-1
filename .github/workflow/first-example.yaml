@@ -6,5 +6,7 @@ jobs:
     steps:
     - name: welcome message
       run: echo "hello how are you"
-    - name: list the files\
+    - name: list the files
       run: ls
+    - name: view readme file
+      run: cat README.md
