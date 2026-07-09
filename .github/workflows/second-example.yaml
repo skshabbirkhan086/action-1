@@ -15,7 +15,8 @@ jobs:
        whoami
        uname
        id
-    
+    - name: install cowasy
+      run: sudo apt-get install cowsay -y
     - name: ASSII
       run: cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> dragon.txt
 
